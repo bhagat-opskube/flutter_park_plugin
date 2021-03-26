@@ -1,0 +1,17 @@
+part of "apis.dart";
+/**
+ * Custom Exception Class to handle exception
+ */
+class ApiException implements Exception
+{
+ bool isDisplay=false; /// `true` To display error to user OR `false` to don't show error to user
+ var errorMessage;   /// error message to send on sentry
+ String? displayMessage;  /// error message to show user
+ ApiException({this.errorMessage,this.isDisplay=false,this.displayMessage});
+
+ @override
+ String toString() {
+  return "$displayMessage";
+ }
+
+}
